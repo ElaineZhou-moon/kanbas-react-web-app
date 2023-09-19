@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grades</title>
+</head>
+<body>
+    <table border="0" width="80%">
+        <tr>
+        <!-- First column -->
+          <td valign="top">
+            <ul>
+              <li><a href="./Navigation/account_navigation.html">Account</a></li>
+              <li><a href="#">Dashboard</a></li>
+              <li><a href="./Navigation/courses_navigation.html">Courses</a></li>
+              <li><a href="#">Calendar</a></li>
+              <li><a href="#">Inbox</a></li>
+              <li><a href="#">History</a></li>
+              <li><a href="#">Studio</a></li>
+              <li><a href="#">Commons</a></li>
+              <li><a href="#">Help</a></li>
+            </ul>
+          </td>
+          <!-- Second column -->
+          <td valign="top">
+            <ul>
+              <li><a href="./home.html">Home</a></li>
+              <li><a href="#">Modules</a></li>
+              <li><a href="#">Piazza</a></li>
+              <li><a href="#">Zoom Meetings</a></li>
+              <li><a href="./Assignments/index.html">Assignments</a></li>
+              <li><a href="#">Quizzes</a></li>
+              <li><a href="./grades.html">Grades</a></li>
+              <li><a href="#">People</a></li>
+              <li><a href="#">Panopto Video</a></li>
+              <li><a href="#">Discussions</a></li>
+              <li><a href="#">Announcements</a></li>
+              <li><a href="#">Pages</a></li>
+              <li><a href="#">Files</a></li>
+              <li><a href="#">Rubrics</a></li>
+              <li><a href="#">Outcomes</a></li>
+              <li><a href="#">Collaborations</a></li>
+              <li><a href="#">Syllabus</a></li>
+              <li><a href="./Settings/settings_navigation.html">Settings</a></li>
+              </ul>
+          </td>
+          <!-- Third column -->
+          <td valign="top">
+            <select id="gradebook">
+              <option selected value="GRADEBOOK">Gradebook</option>
+              <option value="OTHERS">Others</option>
+           </select>
+           <button>Import</button>
+           <select id="export">
+              <option selected value="EXPORT">Export</option>
+              <option value="EXPORT-ALL">Export All</option>
+           </select>
+           <button>Configure</button>
+            <h3>Student Names</h3>
+            <input
+              type="text"
+              placeholder="Search Students"
+            />
+            <h3>Assignment Names</h3>
+            <input 
+                type="text"
+                placeholder="Search Assignments" />
+            <br/>
+            <br/>
+            <button>Apply Filters</button>
+            <br />
+            <br />
+            <table id="grades-table" border="1" width="100%">
+                <!-- row of headings -->
+                <thead>
+                    <tr>
+                        <th>
+                            Student Name
+                        </th>
+                        <th>
+                            A1 SETUP Out of 100
+                        </th>
+                        <th>
+                            A2 HTML Out of 100
+                        </th>
+                        <th>
+                            A3 CSS Out of 100
+                        </th>
+                        <th>
+                            A4 BOOTSTRAP Out of 100
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- main data content rows of the table -->
+                    <tr>
+                        <td class="grades-student-name">Alice Wonderland</td>
+                        <td>
+                            <input type="number" name="student-grade" id="" value="98" max="100" min="0" step="1">
+                        </td>
+                        <td>
+                            <input type="number" name="student-grade" id="" value="89" max="100" min="0" step="1">
+                        </td>
+                        <td>
+                            <input type="number" name="student-grade" id="" value="87" max="100" min="0" step="1">
+                        </td>
+                        <td>
+                            <input type="number" name="student-grade" id="" value="90" max="100" min="0" step="1">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="grades-student-name">Princess Leia</td>
+                        <td>
+                            <input type="number" name="student-grade" id="" value="98" max="100" min="0" step="1">
+                        </td>
+                        <td>
+                            <input type="number" name="student-grade" id="" value="80" max="100" min="0" step="1">
+                        </td>
+                        <td>
+                            <input type="number" name="student-grade" id="" value="87" max="100" min="0" step="1">
+                        </td>
+                        <td>
+                            <input type="number" name="student-grade" id="" value="86" max="100" min="0" step="1">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="grades-student-name">Luke Skywalker</td>
+                        <td>
+                            <input type="number" name="student-grade" id="" value="99" max="100" min="0" step="1">
+                        </td>
+                        <td>
+                            <input type="number" name="student-grade" id="" value="88" max="100" min="0" step="1">
+                        </td>
+                        <td>
+                            <input type="number" name="student-grade" id="" value="97" max="100" min="0" step="1">
+                        </td>
+                        <td>
+                            <input type="number" name="student-grade" id="" value="82" max="100" min="0" step="1">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="grades-student-name">Han Solo</td>
+                        <td>
+                            <input type="number" name="student-grade" id="" value="83" max="100" min="0" step="1">
+                        </td>
+                        <td>
+                            <input type="number" name="student-grade" id="" value="99" max="100" min="0" step="1">
+                        </td>
+                        <td>
+                            <input type="number" name="student-grade" id="" value="94" max="100" min="0" step="1">
+                        </td>
+                        <td>
+                            <input type="number" name="student-grade" id="" value="98" max="100" min="0" step="1">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </td>
+</tr>
+</tbody>
+</table>
+</body>
+</html>
