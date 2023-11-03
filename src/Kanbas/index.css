@@ -1,10 +1,13 @@
-.wd-ellipsis {
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
+.content-div{
+    width: 94%;
+    margin-left: 90px;
+    /* background-color: aqua; */
+    overflow-x:hidden
 }
 
-.wd-link-red {
-    text-decoration: none;
-    color: red;
-}
+@media screen and (max-width: 768px) {
+    .content-div{
+        width: 100%;
+        margin-left: 10px;
+    }
+  }
