@@ -1,44 +1,73 @@
 import { Link, useLocation } from "react-router-dom";
 import { BiUserCircle } from "react-icons/bi";
 import { RiDashboard3Fill } from "react-icons/ri";
-import { FaBook, FaInbox, FaHistory, FaQuestionCircle, FaTv } from "react-icons/fa";
+import { FaBook } from "react-icons/fa";
 import { BsFillCalendar2WeekFill } from "react-icons/bs";
-import logoSrc from "../Images/NEU.png";
+import {
+  FaInbox,
+  FaMicrophone,
+  FaInfoCircle,
+  FaUndo,
+  FaCreativeCommons,
+} from "react-icons/fa";
+import logo from "../../images/NeuLogo.png";
 import "./index.css";
 
 function KanbasNavigation() {
-  const navigationItems = [
-    { label: 'NEU', to: '/', isLogo: true, logoSrc: logoSrc },
-    { label: 'Account', to: '/Kanbas/Account', icon: <BiUserCircle className="wd-icon" style={{ color: 'gray' }} /> },    
-    { label: 'Dashboard', to: '/Kanbas/Dashboard', icon: <RiDashboard3Fill className="wd-icon" /> },
-    { label: 'Courses', to: '/Kanbas/Courses', icon: <FaBook className="wd-icon" /> },
-    { label: 'Calendar', to: '/Kanbas/Calendar', icon: <BsFillCalendar2WeekFill className="wd-icon" /> },
-    { label: 'Inbox', to: '/Kanbas/Inbox', icon: <FaInbox className="wd-icon" /> },
-    { label: 'History', to: '/Kanbas/History', icon: <FaHistory className="wd-icon" /> },
-    { label: 'Help', to: '/Kanbas/Help', icon: <FaQuestionCircle className="wd-icon" /> }
+  const links = [
+    "Account",
+    "Dashboard",
+    "Courses",
+    "Calendar",
+    "Inbox",
+    "History",
+    "Studio",
+    "Commons",
+    "Help",
   ];
 
+  const linkToIconMap = {
+    Account: <BiUserCircle className="wd-icon" />,
+    Dashboard: <RiDashboard3Fill className="wd-icon red-icon" />,
+    Courses: <FaBook className="wd-icon red-icon" />,
+    Calendar: <BsFillCalendar2WeekFill className="wd-icon red-icon" />,
+    Inbox: <FaInbox className="wd-icon red-icon" />,
+    History: <FaUndo className="wd-icon red-icon" />,
+    Studio: <FaMicrophone className="wd-icon red-icon" />,
+    Commons: <FaCreativeCommons className="wd-icon red-icon" />,
+    Help: <FaInfoCircle className="wd-icon red-icon" />,
+  };
   const { pathname } = useLocation();
 
+  const getIsActiveClass = (link) => (pathname.includes(link) ? "active" : "");
+
   return (
-    <div className="list-group wd-kanbas-navigation">
-      {navigationItems.map((item, index) => (
-        item.isLogo ? (
-          <img key={index} src={item.logoSrc} height="65px" width="80px" alt={item.label} />
-        ) : (
-          <Link
-            key={index}
-            to={item.to}
-            className={`list-group-item ${pathname.includes(item.label) && "active"}`}
-          >
-            {item.icon}
-            <br/>
-            {item.label}
-          </Link>
-        )
+    <div className="list-group wd-kanbas-navigation d-none d-md-block" >
+      <Link
+        to="/Kanbas/Dashboard"
+        className={`list-group-item ${getIsActiveClass("/Kanbas")}`}
+        style={{  
+          backgroundColor: 'black',
+        }}
+      >
+        <img
+          src={logo}
+          alt="Neu Logo"
+          className="neu-logo"
+        />
+      </Link>
+      {links.map((link, index) => (
+        <Link
+          key={index}
+          to={`/Kanbas/${link}`}
+          className={`list-group-item ${getIsActiveClass(link)}`}
+        >
+          {linkToIconMap[link]}
+          <br />
+          {link}
+        </Link>
       ))}
     </div>
   );
 }
-
 export default KanbasNavigation;

@@ -1,1 +1,0 @@
-export const BACKEND_BASE_URL = process.env.REACT_APP_BACKEND_BASE_URL || "https://kanbas-node-server-app-elaine-7627c72a29f7.herokuapp.com"
